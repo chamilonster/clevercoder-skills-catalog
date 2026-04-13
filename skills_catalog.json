@@ -1,0 +1,58 @@
+{
+  "_readme": "CleverCoder community skills catalog. Each entry describes a skill that can be installed into a project to extend what Claude Code can do. This file is fetched by CleverCoder at runtime from its `_source` URL; the local copy in %APPDATA%/CleverCoder/skills_catalog.json acts as an offline cache. Pull requests with new skills or corrections are welcome at https://github.com/chamilonster/clevercoder-skills-catalog.",
+  "_schema": {
+    "Id": "Unique identifier, lowercase with dashes. Used as the folder name when cloning (.claude/skills/<Id>/). Do not change on existing entries — it would break install-detection.",
+    "Name": "Display name shown in the UI. Emojis allowed.",
+    "Description": "Full English description. Use \\n for line breaks. Ideally explains WHAT it does, WHEN to use it, and which commands it enables.",
+    "Category": "Grouping label for the catalog window. Used values: Productivity, Development, Security, Organization, Content, Notifications.",
+    "Emoji": "Representative emoji shown next to the name in the list.",
+    "GitHubUrl": "GitHub repo URL. Used for opening in browser and for fetching stars via the GitHub API.",
+    "Author": "Author or GitHub username. When empty or 'community', CleverCoder extracts it from GitHubUrl.",
+    "Method": "Install method. Valid values: GitClone, NpxRun, OpenUrl, PluginInstall, PipInstall.",
+    "InstallCommand": "Explicit install command overriding the one derived from Method. For GitClone: `git clone <url>` — CleverCoder appends the destination. For NpxRun/PipInstall: the full command.",
+    "Commands": "List of Claude Code commands this skill enables (without the leading /). Source of truth for the Use button in the terminal. If empty, CleverCoder scans .claude/skills/<Id>/commands/ in the installed repo.",
+    "_source": "Optional remote catalog URL (JSON). When set, CleverCoder downloads the skills from this URL when the catalog opens and replaces the local list. The local file then acts as an offline cache.",
+    "_catalogVersion": "Integer version of the hardcoded defaults the catalog was built from. CleverCoder compares this against its shipped CommunitySkillsCatalog.CatalogVersion on load — when the file is older, non-custom entries are reconciled from the app's defaults while user-authored 'custom' entries are preserved."
+  },
+  "_source": "https://raw.githubusercontent.com/chamilonster/clevercoder-skills-catalog/main/skills_catalog.json",
+  "_catalogVersion": 2,
+  "skills": [
+    {
+      "Id": "superpowers",
+      "Name": "Superpowers",
+      "Description": "The most recommended development framework in the Claude Code community. Implements a complete 7-phase workflow that mirrors professional best practices: Socratic brainstorming → spec → plan → TDD → subagent-assisted dev → code review.\n\nInstead of jumping straight into code, Claude first asks questions to understand what you want to build, generates a spec you can review, creates a clear implementation plan, then executes using TDD (tests before code).\n\nSkills activate automatically per task: test-driven-development when implementing features, systematic-debugging when debugging, verification-before-completion before declaring work done. You don't need to invoke them manually.\n\nInstall via the official Claude Code marketplace:\n  /plugin marketplace add obra/superpowers-marketplace\n  /plugin install superpowers@superpowers-marketplace\n\nOr from Anthropic's marketplace:\n  /plugin install superpowers@claude-plugins-official\n\nUpdate: /plugin update superpowers",
+      "Category": "Productivity",
+      "Emoji": "⚡",
+      "GitHubUrl": "https://github.com/obra/superpowers",
+      "Author": "obra",
+      "Method": "PluginInstall",
+      "InstallCommand": "/plugin marketplace add obra/superpowers-marketplace && /plugin install superpowers@superpowers-marketplace",
+      "Commands": ["brainstorm", "write-plan", "execute-plan"],
+      "Source": "community"
+    },
+    {
+      "Id": "autoskills",
+      "Name": "Auto Skills",
+      "Description": "Automatically detects your project's stack (React, Next.js, Vue, Astro, TypeScript, Tailwind, Python, and 20+ more) and installs the most useful skills for it — no manual setup.\n\nRun one command at your project root and autoskills inspects config files (package.json, requirements.txt, etc.) to pick and install the relevant skills.\n\nUsage:\n  npx autoskills\n\nNo global install required. Works with Claude Code and other AI agents that support the skills format.",
+      "Category": "Productivity",
+      "Emoji": "🤖",
+      "GitHubUrl": "https://github.com/midudev/autoskills",
+      "Author": "midudev",
+      "Method": "NpxRun",
+      "InstallCommand": "npx autoskills",
+      "Source": "community"
+    },
+    {
+      "Id": "awesome-claude-skills",
+      "Name": "Awesome Claude Skills",
+      "Description": "Curated community skill collection for Claude Code: web asset generator (favicons, icons, OG images, PWA), Playwright E2E testing, multi-layer security review (OWASP), invoice/document organizer, YouTube/article extractor, book reader (EPUB/PDF), research-aware writer with citations, and more.\n\nCloning the repo makes all skills available under `.claude/skills/`. Claude detects and activates the right one based on the task — no manual invocation needed.",
+      "Category": "Productivity",
+      "Emoji": "🌟",
+      "GitHubUrl": "https://github.com/travisvn/awesome-claude-skills",
+      "Author": "travisvn",
+      "Method": "GitClone",
+      "InstallCommand": "git clone https://github.com/travisvn/awesome-claude-skills .claude/skills/awesome-claude-skills",
+      "Source": "community"
+    }
+  ]
+}
