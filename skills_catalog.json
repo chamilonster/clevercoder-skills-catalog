@@ -15,7 +15,7 @@
     "_catalogVersion": "Integer version of the hardcoded defaults the catalog was built from. CleverCoder compares this against its shipped CommunitySkillsCatalog.CatalogVersion on load — when the file is older, non-custom entries are reconciled from the app's defaults while user-authored 'custom' entries are preserved."
   },
   "_source": "https://raw.githubusercontent.com/chamilonster/clevercoder-skills-catalog/main/skills_catalog.json",
-  "_catalogVersion": 4,
+  "_catalogVersion": 5,
   "skills": [
     {
       "Id": "anthropic-document-skills",
@@ -43,7 +43,7 @@
     },
     {
       "Id": "caveman",
-      "Name": "Caveman 🦴",
+      "Name": "Caveman (original) 🦴",
       "Description": "Why use many token when few token do trick. Cuts ~65% of Claude's output tokens by making it talk in caveman style: short sentences, no filler, no apology, no preamble. Top-tier popularity in the Claude Code ecosystem.\n\nUse when you want shorter answers, lower bills, or faster reads.",
       "Category": "Productivity",
       "Emoji": "🦴",
@@ -67,7 +67,7 @@
     },
     {
       "Id": "caveman-distillate",
-      "Name": "Caveman Distillate",
+      "Name": "Caveman (ultra) 🪨",
       "Description": "Ultra-compressed AI output mode — variant of caveman optimized for further token reduction. Distill text to its core meaning. Use after caveman if you need even tighter output, or instead of it for write-heavy tasks (summaries, status reports).",
       "Category": "Productivity",
       "Emoji": "🪨",
