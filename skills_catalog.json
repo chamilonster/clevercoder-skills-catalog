@@ -15,7 +15,7 @@
     "_catalogVersion": "Integer version of the hardcoded defaults the catalog was built from. CleverCoder compares this against its shipped CommunitySkillsCatalog.CatalogVersion on load — when the file is older, non-custom entries are reconciled from the app's defaults while user-authored 'custom' entries are preserved."
   },
   "_source": "https://raw.githubusercontent.com/chamilonster/clevercoder-skills-catalog/main/skills_catalog.json",
-  "_catalogVersion": 5,
+  "_catalogVersion": 6,
   "skills": [
     {
       "Id": "anthropic-document-skills",
@@ -67,10 +67,10 @@
     },
     {
       "Id": "caveman-distillate",
-      "Name": "Caveman (ultra) 🪨",
+      "Name": "Caveman (ultra) 💎",
       "Description": "Ultra-compressed AI output mode — variant of caveman optimized for further token reduction. Distill text to its core meaning. Use after caveman if you need even tighter output, or instead of it for write-heavy tasks (summaries, status reports).",
       "Category": "Productivity",
-      "Emoji": "🪨",
+      "Emoji": "💎",
       "GitHubUrl": "https://github.com/dlepold/caveman-distillate",
       "Author": "dlepold",
       "Method": "GitClone",
